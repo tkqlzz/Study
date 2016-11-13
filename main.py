@@ -1,0 +1,37 @@
+from bst import *
+from heap import *
+
+bst = BinarySearchTree()
+heap = MaxHeap()
+# 10 5 15 3 7 12 18 1 20
+print("데이터 입력 : ", end="")
+arr = list(map(int, input().split()))
+for i in arr:
+    bst.put(i)
+heap.buildHeap(arr)
+
+print("BST 트리 출력")
+showTree(bst.root)
+print("BST 트리 전위순회")
+preorder(bst.root)
+print()
+print("BST 트리 중위순회")
+inorder(bst.root)
+print()
+print("BST 트리 후위순회")
+postorder(bst.root)
+print()
+print()
+print("MaxHeap 트리 출력")
+arrShowTree(heap.heapList)
+print("MaxHeap 트리 전위순회")
+arrPreorder(heap.heapList)
+print()
+print("MaxHeap 트리 전위순회")
+arrInorder(heap.heapList)
+print()
+print("MaxHeap 트리 전위순회")
+arrPostorder(heap.heapList)
+print()
+print("MaxHeap 정렬")
+print(heap.sort())
